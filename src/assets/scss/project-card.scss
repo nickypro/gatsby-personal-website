@@ -1,0 +1,69 @@
+.project-section {
+  
+}
+
+.project-card {
+  width: 90vw;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: row;
+  border-radius: 1rem;
+  box-shadow: 0px 3px 5px 3px rgba(black, 0.05);
+  margin: 3rem 0.5rem;
+}
+
+.project-card-image {
+  width: 40%;
+  border-radius: 1rem 0rem 0rem 1rem;
+  z-index: 2;
+}
+
+.project-card-body {
+  margin-left: -2rem;
+  padding: 1rem;
+  padding-left: 4rem;
+  background-color: #171722;
+  width: 100%;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7em;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h2 {
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+  }
+  a {
+    text-align: right;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .project-card {
+    width: 90vw;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .project-card-image {
+    width: 100%;
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+
+  .project-card-body {
+    margin: 0px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+  }
+}

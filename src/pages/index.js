@@ -1,21 +1,70 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import ParticleBackground from '../components/particle-background'
+import ProjectsComponent from "../components/projects"
+
+import Typist from 'react-typist'
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
+import "react-typist/dist/Typist.css"
+import "../assets/scss/main.scss"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  <Layout title="Nicky.pro">
+    <ParticleBackground />
+    <div className="full-center-flex" style={{pointerEvents: "none", zIndex: 1}}>
+      <h1 style={{pointerEvents:  "all"}}>
+        <Typist avgTypingDelay={100}>
+          <Typist.Delay ms={500} />
+          Nicky Pochinkov.
+        </Typist>
+        <AnchorLink to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
+      </h1>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+
+    <StaticQuery
+      query={graphql`
+        query {
+          allStrapiProject {
+            edges {
+              node {
+                strapiId
+                name
+                tools
+                image {
+                  publicURL
+                }
+                summary
+                project_type {
+                  type
+                }
+              }
+            }
+          }
+          allStrapiProjectType {
+            edges {
+              node {
+                order
+                type
+                updated_at
+              }
+            }
+          }
+        }
+      `}
+      render={data => {
+        const projectTypes = data.allStrapiProjectType.edges.sort((typeA, typeB) => typeA.node.order - typeB.node.order)
+        return (
+        <div id="projects">
+          <div>
+            <ProjectsComponent projects={data.allStrapiProject.edges} projectTypes={projectTypes} />
+          </div>
+        </div>
+        )}
+      }
+    />
   </Layout>
 )
 

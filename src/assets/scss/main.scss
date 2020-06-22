@@ -1,0 +1,96 @@
+* {
+  color: white;
+  font-family: Staatliches;
+}
+
+.light-section {
+  background-color: #222233;
+}
+
+html, body {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none ;
+}
+
+h1 {
+  font-family: Staatliches ;
+  font-size: 6rem ;
+  font-weight: normal;
+  text-align: center;
+
+  @media screen and (max-width: 600px){
+    font-size: 4rem;
+  }
+}
+
+#category {
+  font-family: Staatliches ;
+  font-weight: 500 ;
+}
+
+#title {
+  letter-spacing: 0.4px ;
+  font-size: 22px ;
+  font-size: 1.375rem ;
+  line-height: 1.13636 ;
+}
+
+#banner {
+  margin: 20px ;
+  height: 800px ;
+}
+
+#editor {
+  font-size: 16px ;
+  font-size: 1rem ;
+  line-height: 1.75 ;
+}
+
+.uk-navbar-container {
+  background: #112 ;
+  font-family: Staatliches ;
+}
+
+img:hover {
+  opacity: 1 ;
+  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1) ;
+}
+
+.full-center-flex {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.transparent-button {
+  background: none;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+  border-radius: 50%;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+main {
+  position: relative;
+  z-index: 0;
+}
+
+.particles-background {
+  position: absolute; 
+  z-index: -10;
+}
+
+.tsparticles-canvas-el {
+  height: 100vh !important;
+  background: #112 ;
+}

@@ -31,6 +31,8 @@ module.exports = {
           "project",
           "project-type",
           "page-list-location",
+          "design",
+          "design-type",
         ],
         queryLimit: 1000,
       },

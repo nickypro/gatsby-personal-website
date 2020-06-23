@@ -16,6 +16,7 @@
   width: 40%;
   border-radius: 1rem 0rem 0rem 1rem;
   z-index: 2;
+  flex: 4;
 }
 
 .project-card-body {
@@ -29,6 +30,7 @@
   line-height: 1.7em;
   border-radius: 1rem;
   box-sizing: border-box;
+  flex: 6;
   
   p {
     font-family: 'Open Sans', sans-serif;

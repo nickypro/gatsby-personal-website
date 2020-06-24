@@ -54,9 +54,17 @@ const Nav = () => {
               `}
               render={data =>
                 data.allStrapiPage.edges.map((page, i) => {
+                  const path = `/${page.node.slug}`
+                  const pathOnly = path.split("#")[0]
+
                   if (page.node.page_list_location.name === "navbar") return (
                     <li key={page.node.strapiId}>
-                      <AnchorLink to={`/${page.node.slug}`} activeClassName="navbar-active" stripHash>
+                      <AnchorLink 
+                        to={path} 
+                        className={window.location.pathname === pathOnly ? "navbar-active" : ""} 
+                        activeClassName="navbar-active" 
+                        stripHash
+                        >
                         {page.node.title}
                       </AnchorLink>
                     </li>

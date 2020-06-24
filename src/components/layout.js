@@ -8,7 +8,7 @@ const Layout = (props) => {
   return (
     <>
       <Seo title={props.title}/>
-      <Nav />
+      <Nav path={props.path}/>
       <main>{props.children}</main>
     </>
   )

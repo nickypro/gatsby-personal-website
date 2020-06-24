@@ -10,7 +10,7 @@ import "react-typist/dist/Typist.css"
 import "../assets/scss/main.scss"
 
 const IndexPage = () => (
-  <Layout title="Nicky.pro">
+  <Layout title="Blog" path="/blog">
     <ParticleBackground />
     <div className="full-center-flex">
       <h1 style={{pointerEvents:  "all"}}>

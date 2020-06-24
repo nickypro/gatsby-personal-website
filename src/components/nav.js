@@ -3,7 +3,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import "../assets/scss/nav.scss"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-const Nav = () => {
+const Nav = (props) => {
   
   if (typeof window !== 'undefined') {
     window.onscroll = function () {
@@ -61,7 +61,7 @@ const Nav = () => {
                     <li key={page.node.strapiId}>
                       <AnchorLink 
                         to={path} 
-                        className={window.location.pathname === pathOnly ? "navbar-active" : ""} 
+                        className={props.path === pathOnly ? "navbar-active" : ""} 
                         activeClassName="navbar-active" 
                         stripHash
                         >

@@ -9,7 +9,7 @@ import "../assets/scss/designs.scss"
 const TrinityPage = () => {
   
   return (
-  <Layout title="My Designs">
+  <Layout title="My Designs" path="/designs">
     <ParticleBackground />
     <div className="full-center-flex">
       <h1 style={{pointerEvents:  "all", fontSize: "3rem"}}>

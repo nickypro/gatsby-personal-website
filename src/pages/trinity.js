@@ -8,7 +8,7 @@ import "../assets/scss/trinity.scss"
 const TrinityPage = () => {
   
   return (
-  <Layout>
+  <Layout title="Trinity College Dublin" path="/trinity">
     <ParticleBackground />
     <div className="full-center-flex" style={{position: "absolute", top:"0px", zIndex: 10, pointerEvents: "none"}}>
       <h1 style={{pointerEvents:  "all", fontSize: "3rem"}}>

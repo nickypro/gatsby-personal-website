@@ -6,9 +6,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 const Nav = () => {
   
   if (typeof window !== 'undefined') {
-    let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
-      const maxScroll = document.body.clientHeight - window.innerHeight;
       let currentScrollPos = window.pageYOffset;
       if (
           (currentScrollPos < 40)
@@ -19,7 +17,6 @@ const Nav = () => {
         document.getElementById("navbar-container").style.backgroundColor = "#112";
         document.getElementById("navbar-container").style.boxShadow = "0 2px 2px 0px rgba(255, 255, 255, 0.2)";
       }
-      prevScrollpos = currentScrollPos;
     }
   }
 

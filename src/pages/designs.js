@@ -67,7 +67,9 @@ const TrinityPage = () => {
                     .map(design =>   
                   
                     <div key={design.title} className="design-grid-item">
-                      <img src={design.image.publicURL} className="design-grid-image"/> 
+                      <img src={design.image.publicURL} 
+                        alt={design.title} 
+                        className="design-grid-image"/> 
                       <a href={design.image_hd.publicURL} 
                         alt={design.title} 
                         target="_blank" 

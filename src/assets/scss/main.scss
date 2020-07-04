@@ -3,13 +3,19 @@
   font-family: Staatliches;
 }
 
-.___gatsby {
+#___gatsby {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 .light-section {
   background-color: #222233;
+  box-sizing: border-box;
+  padding-top: 3rem;
+}
+
+.dark-section {
+  background-color: #112;
   box-sizing: border-box;
   padding-top: 3rem;
 }

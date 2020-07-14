@@ -12,11 +12,13 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-anchor-links",
+    "gatsby-plugin-sharp", 
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `data`,
+        path: `${__dirname}/src/data`,
       },
     },
     {
@@ -31,8 +33,6 @@ module.exports = {
           "project",
           "project-type",
           "page-list-location",
-          "design",
-          "design-type",
         ],
         queryLimit: 1000,
       },

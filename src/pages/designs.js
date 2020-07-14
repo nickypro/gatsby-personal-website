@@ -22,28 +22,16 @@ const TrinityPage = () => {
       <StaticQuery 
         query={graphql`
           query{
-            allStrapiDesign {
+            allFile(filter: {
+              extension: {regex: "/(jpg)|(png)/"},
+              relativeDirectory:  {eq: "posters"}
+            }) {
               edges {
                 node {
-                  strapiId
-                  title
-                  order
-                  image {
-                    publicURL
-                  }
-                  image_hd {
-                    publicURL
-                  }
-                  design_type {
-                    name
-                  }
-                }
-              }
-            }
-            allStrapiDesignType {
-              edges {
-                node {
-                  name
+                  relativeDirectory,
+                  name,
+                  relativePath
+                  publicURL
                 }
               }
             }
@@ -51,39 +39,36 @@ const TrinityPage = () => {
           }
         `}
         render={data => {
-          const designTypes = data.allStrapiDesignType.edges.map(edge => edge.node.name)
-          const designs = data.allStrapiDesign.edges.map(edge => edge.node)
-
+          const images = data.allFile.edges.map(edge => edge.node)
+          
           return (
             <div className="full-center-flex light-section">
-              {designTypes.map(type =>
-                <div key={type}>
-                  <h2>{type}</h2>
+              
+                <div>
+                  <h2>Posters</h2>
 
                   <div className="design-grid">
-                  {designs
-                    .filter(design => design.design_type.name === type)
-                    .sort((a, b) => a.order - b.order)
-                    .map(design =>   
+                  {images
+                    .map(image =>   
                   
-                    <div key={design.title} className="design-grid-item">
-                      <img src={design.image.publicURL} 
-                        alt={design.title} 
+                    <div key={image.name} className="design-grid-item">
+                      <img src={image.publicURL} 
+                        alt={image.name} 
                         className="design-grid-image"/> 
-                      <a href={design.image_hd.publicURL} 
-                        alt={design.title} 
+                      <a href={image.publicURL} 
+                        alt={image.name} 
                         target="_blank" 
                         rel="noreferrer"
                         >
                         <div className="design-grid-info">
-                          <h3>{design.title}</h3>
+                          <h3>{image.name}</h3>
                         </div>
                       </a>
                     </div>  
                   )}
                   </div>
                 </div>
-              )}
+              
             </div>
           )
         }}

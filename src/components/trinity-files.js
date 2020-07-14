@@ -26,17 +26,20 @@ function Semester({modulesObj, name}) {
   const modulesArr = obj2arr(modulesObj, "sections")
   
   return (
-  <div className="trinity-modules-container">
+  <div className="trinity-semester" style={{textAlign: "center"}}>
     
     {/** Name Of the Semester */}
     <h2>{semesterShorthand[name] || name}</h2>
-
+    
+    <div className="trinity-module-container">
     {modulesArr.map( module => 
       <Module 
         sectionsObj={module.sections} 
         name={module.name}
       />  
     )}
+    </div>
+
   </div>
   )
 }
@@ -45,14 +48,16 @@ function Module({sectionsObj, name}) {
   const sectionsArr = obj2arr(sectionsObj, "files")
   
   return (
-    <div>
+    <div className="trinity-module">
       <h3>{name}</h3>
+      <div className="trinity-sections-container">
       {sectionsArr.map( section => 
         <Section 
           files={section.files} 
           name={section.name}
         />
       )}
+      </div>
 
     </div>
   )
@@ -68,11 +73,11 @@ function Section({files, name}) {
 
   /* Return a list of the files */
   return (
-    <div>
+    <div className="trinity-section">
       
-      <h4> {name} </h4>
+      <h4 className="name"> {name} </h4>
       
-      <ul>
+      <ul className="trinity-files-list">
         {/* List all files for section */}
         {sortedFiles.map(file => 
           <File file={file}/>
@@ -85,7 +90,7 @@ function Section({files, name}) {
 
 function File({file}) {
   return ( 
-  <li>
+  <li className="trinity-file">
     <a href={file.publicURL} alt={file.name}> 
       {file.name}
     </a>
@@ -107,7 +112,7 @@ const TrinityFiles = ({semestersObj}) => {
       </ul>
       */}
       {semestersArr.map( (semester, index) =>         
-        <div className={"full-center-flex " + (index%2 === 0)?"light-section":"dark-section"}>
+        <div className={"full-center-flex " + ((index%2 === 0)?"light-section":"dark-section")}>
           <Semester modulesObj={semester.modules} name={semester.name}/>
         </div>
       )}

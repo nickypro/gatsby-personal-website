@@ -13,3 +13,24 @@
     margin-bottom: 0.5rem;
   }
 }
+
+.trinity-sections-container {
+  @media screen and (min-width: 1000px) {
+    display: flex; 
+    justify-content: center;      
+  }
+}
+
+.trinity-section {
+  margin: 0.5rem;
+  text-align: left;
+
+  .name {
+    text-align: center;
+  }
+}
+
+.trinity-files-list {
+  padding: 0px;
+  padding-left: 1rem;
+}

@@ -57,7 +57,7 @@ const TrinityPage = () => {
           .filter(edge => regexTest.test(edge.node.relativeDirectory))
           .map(edge => {
           
-          const [, semester, module, section] = edge.node.relativeDirectory.replace("_", " ").match(regexTest) 
+          const [, semester, module, section] = edge.node.relativeDirectory.replace(/_/g, " ").replace(/-/g, " - ").match(regexTest) 
           
           return {
             ...edge.node,

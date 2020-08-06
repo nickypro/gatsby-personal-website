@@ -6,8 +6,8 @@ const DATADIR = `${__dirname}/src/data`
 
 module.exports = {
   siteMetadata: {
-    title: "Nicky.pro",
-    description: "Nicky Pochinkov's Personal Website/Blog - built with GatsbyJS",
+    title: "Eoin Blunnie",
+    description: "Gatsby blog with Strapi",
     author: "Nicky Pochinkov",
   },
   plugins: [

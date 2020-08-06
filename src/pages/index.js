@@ -12,8 +12,12 @@ import "react-typist/dist/Typist.css"
 import "../assets/scss/main.scss"
 
 const IndexPage = () => (
+<<<<<<< HEAD
   <Layout title="Nicky.pro" path="/">
     
+=======
+  <Layout title="Home" path="/">
+>>>>>>> fa87a54 (Changed Titles)
     <ParticleBackground />
     <div className="full-center-flex" style={{pointerEvents: "none", zIndex: 1}}>
       <span style={{pointerEvents:  "all", textAlign: "center"}}>

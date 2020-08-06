@@ -30,8 +30,8 @@ const Nav = (props) => {
         document.getElementById("navbar-container").style.backgroundColor = "transparent";
         document.getElementById("navbar-container").style.boxShadow = "none";
       } else {
-        document.getElementById("navbar-container").style.backgroundColor = "#112";
-        document.getElementById("navbar-container").style.boxShadow = "0 2px 2px 0px rgba(255, 255, 255, 0.2)";
+        document.getElementById("navbar-container").style.backgroundColor = "#6cd";
+        document.getElementById("navbar-container").style.boxShadow = "0 2px 2px 0px rgba(10, 20, 30, 0.2)";
       }
     }
   }
@@ -39,11 +39,11 @@ const Nav = (props) => {
   return (
   <div>
     <div>
-      <nav className="navbar-container" id="navbar-container" data-uk-navbar>
+      <nav className="navbar-container" id="navbar-container">
         <div className="navbar-left">
           <ul className="navbar-nav">
             <li>
-              <Link to="/" activeClassName="navbar-active">Nicky.pro</Link>
+              <Link to="/" activeClassName="navbar-active">Eoin Blunnie</Link>
             </li>
           </ul>
         </div>

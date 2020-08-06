@@ -37,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
       link={[
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Staatliches&family=Staatliches",
+          href: "https://fonts.googleapis.com/css2?family=PT+Sans&display=swap",
         },
         {
           rel: "stylesheet",

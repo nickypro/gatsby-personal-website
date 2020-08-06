@@ -1,6 +1,6 @@
 * {
-  color: white;
-  font-family: Staatliches;
+  color: #223;
+  font-family: "PT Sans";
 }
 
 #___gatsby {
@@ -9,13 +9,13 @@
 }
 
 .light-section {
-  background-color: #222233;
+  background-color: #4ab;
   box-sizing: border-box;
   padding-top: 3rem;
 }
 
 .dark-section {
-  background-color: #112;
+  background-color: #49a;
   box-sizing: border-box;
   padding-top: 3rem;
 }
@@ -29,7 +29,6 @@ a {
 }
 
 h1 {
-  font-family: Staatliches ;
   font-size: 6rem ;
   font-weight: normal;
   text-align: center;
@@ -40,7 +39,6 @@ h1 {
 }
 
 #category {
-  font-family: Staatliches ;
   font-weight: 500 ;
 }
 
@@ -63,8 +61,7 @@ h1 {
 }
 
 .uk-navbar-container {
-  background: #112 ;
-  font-family: Staatliches ;
+  background: #6cd ;
 }
 
 img:hover {
@@ -115,12 +112,12 @@ main {
   position: absolute; 
   left: 0px;
   right: 0px;
-  background-color: #112;
+  background-color: #6cd;
   z-index: -10;
   width: 100vw;
 }
 
 .tsparticles-canvas-el {
   height: 100vh !important;
-  background: #112 ;
+  background: #6cd ;
 }

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "eoin-blunnie",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A website forked and redesigned for Eoin Blunnie",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nicky Pochinkov <pochinkn@tcd.ie>",
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "gatsby": "^2.22.15",
@@ -28,7 +28,8 @@
     "react-markdown": "^4.3.1",
     "react-moment": "^0.9.7",
     "react-particles-js": "^3.2.1",
-    "react-typist": "^2.0.5"
+    "react-typist": "^2.0.5",
+    "react-typist-loop": "0.0.5"
   },
   "devDependencies": {
     "prettier": "2.0.5"

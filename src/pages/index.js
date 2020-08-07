@@ -28,7 +28,9 @@ const IndexPage = () => (
         </Typist>
         </h1>
       </span>
-      <AnchorLink style={{pointerEvents:  "all"}} to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
+      <AnchorLink to="/#projects" className="transparent-button" stripHash>
+        <span style={{pointerEvents: "all"}}>&#8964;</span>      
+      </AnchorLink>
     </div>
 
     <StaticQuery

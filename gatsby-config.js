@@ -7,7 +7,7 @@ const DATADIR = `${__dirname}/src/data`
 module.exports = {
   siteMetadata: {
     title: "Eoin Blunnie",
-    description: "Gatsby blog with Strapi",
+    description: "Personal website of Eoin Blunnie",
     author: "Nicky Pochinkov",
   },
   plugins: [
@@ -54,11 +54,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "eoin-blunnie",
+        short_name: "blunnie",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#66ccdd",
+        theme_color: "#66ccdd",
         display: "minimal-ui",
         icon: `${DATADIR}/icon.png`,
       },

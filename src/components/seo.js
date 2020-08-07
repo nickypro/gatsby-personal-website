@@ -79,6 +79,14 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: `og:image`,
+          content: 'http://nicky.pro/og-image.png',
+        },
+        {
+          property: `og:image:secure_url`,
+          content: 'https://nicky.pro/og-image.png',
+        },
       ].concat(meta)}
     />
   )

@@ -40,8 +40,14 @@ const IndexPage = () => (
 =======
         </h1>
       </span>
+<<<<<<< HEAD
       <AnchorLink style={{pointerEvents:  "all"}} to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
 >>>>>>> 81dfa72 (Changed text to be for Eoin)
+=======
+      <AnchorLink to="/#projects" className="transparent-button" stripHash>
+        <span style={{pointerEvents: "all"}}>&#8964;</span>      
+      </AnchorLink>
+>>>>>>> 36629f2 (Fixed down pointer to be clickable)
     </div>
 
     <AboutMe />

@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Nicky.pro",
-    description: "Gatsby blog with Strapi",
+    description: "Nicky Pochinkov's Personal Website/Blog - built with GatsbyJS",
     author: "Nicky Pochinkov",
   },
   plugins: [

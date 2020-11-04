@@ -1,7 +1,23 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import "../assets/scss/nav.scss"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+
+const pages = [
+  {
+    title: "Projects",
+    slug: "/#projects",
+  },{
+    title: "Trinity",
+    slug: "/trinity",
+  },{
+    title: "Blog",
+    slug: "/blog",
+  },{
+    title: "Designs",
+    slug: "/designs",
+  }
+]
 
 const Nav = (props) => {
   
@@ -34,45 +50,25 @@ const Nav = (props) => {
 
         <div className="navbar-right">
           <ul className="navbar-nav">
-            <StaticQuery
-              query={graphql`
-                query {
-                  allStrapiPage {
-                    edges {
-                      node {
-                        strapiId
-                        title
-                        slug
-                        isMenuItem
-                        page_list_location {
-                          name
-                        }
-                      }
-                    }
-                  }
-                }
-              `}
-              render={data =>
-                data.allStrapiPage.edges.map((page, i) => {
-                  const path = `/${page.node.slug}`
-                  const pathOnly = path.split("#")[0]
+            {
+              pages.map((page, i) => {
+                const path = page.slug
+                const pathOnly = path.split("#")[0]
+                console.log(path)
 
-                  if (page.node.page_list_location.name === "navbar") return (
-                    <li key={page.node.strapiId}>
-                      <AnchorLink 
-                        to={path} 
-                        className={props.path === pathOnly ? "navbar-active" : ""} 
-                        activeClassName="navbar-active" 
-                        stripHash
-                        >
-                        {page.node.title}
-                      </AnchorLink>
-                    </li>
-                  )
-                  return <></>;
-                })
-              }
-            />
+                return (
+                  <li key={page.slug}>
+                    <AnchorLink to={path} 
+                      className={props.path === pathOnly ? "navbar-active" : ""} 
+                      activeClassName="navbar-active" 
+                      stripHash
+                      >
+                        {page.title}
+                    </AnchorLink>
+                  </li>
+                )
+              })
+            }
           </ul>
         </div>
       </nav>

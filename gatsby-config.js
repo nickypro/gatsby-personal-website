@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const DATADIR = `${__dirname}/src/data`
+
 module.exports = {
   siteMetadata: {
     title: "Nicky.pro",
@@ -18,23 +20,27 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data`,
+        path: `${DATADIR}`,
       },
     },
-    {
-      resolve: "gatsby-source-strapi",
+    /*{
+      resolve: "gatsby-source-filesystem",
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
-        contentTypes: [
-          // List of the Content Types you want to be able to request from Gatsby.
-          "article",
-          "category",
-          "page",
-          "project",
-          "project-type",
-          "page-list-location",
+        name: "projects",
+        path: `${DATADIR}/projects`
+      }
+    },*/
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 300,
+            },
+          },
         ],
-        queryLimit: 1000,
       },
     },
     "gatsby-transformer-sharp",

@@ -5,54 +5,23 @@
  */
 
 // You can delete this file if you're not using it
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const result = await graphql(
-    `
-      {
-        articles: allStrapiArticle {
-          edges {
-            node {
-              strapiId
-            }
-          }
-        }
-        categories: allStrapiCategory {
-          edges {
-            node {
-              strapiId
-            }
-          }
-        }
-      }
-    `
-  )
+const _ = require("lodash")
 
-  if (result.errors) {
-    throw result.errors
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators;
+
+  if (_.get(node, "internal.type") === `MarkdownRemark`) {
+    // Get the parent node
+    const parent = getNode(_.get(node, "parent"));
+
+    // Create a field on this node for the "collection" of the parent
+    // NOTE: This is necessary so we can filter `allMarkdownRemark` by
+    // `collection` otherwise there is no way to filter for only markdown
+    // documents of type `post`.
+    createNodeField({
+      node,
+      name: "collection",
+      value: _.get(parent, "sourceInstanceName")
+    });
   }
-
-  // Create blog articles pages.
-  const articles = result.data.articles.edges
-  const categories = result.data.categories.edges
-
-  articles.forEach((article, index) => {
-    createPage({
-      path: `/article/${article.node.strapiId}`,
-      component: require.resolve("./src/templates/article.js"),
-      context: {
-        id: article.node.strapiId,
-      },
-    })
-  })
-
-  categories.forEach((category, index) => {
-    createPage({
-      path: `/category/${category.node.strapiId}`,
-      component: require.resolve("./src/templates/category.js"),
-      context: {
-        id: category.node.strapiId,
-      },
-    })
-  })
-}
+};

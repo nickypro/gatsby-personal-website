@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import ParticleBackground from '../components/particle-background'
-import ProjectsComponent from "../components/projects"
+import ProjectCard from "../components/project-card"
 
 import Typist from 'react-typist'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
@@ -26,40 +26,56 @@ const IndexPage = () => (
 
     <StaticQuery
       query={graphql`
-        query {
-          allStrapiProject {
-            edges {
-              node {
-                strapiId
-                name
-                tools
-                image {
-                  publicURL
-                }
-                summary
-                project_type {
-                  type
-                }
-              }
-            }
-          }
-          allStrapiProjectType {
-            edges {
-              node {
-                order
+      query {
+        allMarkdownRemark(sort: { fields: [fileAbsolutePath], order: DESC }, filter: {fileAbsolutePath: {regex: "/projects\//"}}) {
+          edges {
+            node {
+              html
+              fileAbsolutePath
+              frontmatter {
+                title
                 type
-                updated_at
+                image {
+                  childImageSharp {
+                    resize(width: 500, height: 500) {
+                      src
+                    }
+                    fluid(maxWidth: 500) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
+
             }
           }
         }
+      }
       `}
       render={data => {
-        const projectTypes = data.allStrapiProjectType.edges.sort((typeA, typeB) => typeA.node.order - typeB.node.order)
+        console.log(data)
+
+        const projects = data.allMarkdownRemark.edges.map(edge => {
+          return {
+            ...edge.node, 
+            image: edge.node.frontmatter.image && edge.node.frontmatter.image.childImageSharp }
+        })
+
         return (
         <div id="projects">
-          <div>
-            <ProjectsComponent projects={data.allStrapiProject.edges} projectTypes={projectTypes} />
+          {/** Main Projects */}
+          <div className="full-center-flex light-section">
+            <h1> Main Projects </h1>
+            <div className="projects-section">
+          
+              {
+                projects.map((proj, i) => {
+                  return <ProjectCard key={proj.fileAbsolutePath} project={proj}/>
+                })
+              }
+              {/*<ProjectsComponent projects={data.allStrapiProject.edges} projectTypes={projectTypes} />*/}
+
+            </div>
           </div>
         </div>
         )}

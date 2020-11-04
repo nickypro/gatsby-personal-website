@@ -14,19 +14,6 @@ const TrinityPage = () => {
     <StaticQuery 
       query={graphql`
         query{
-          allStrapiPage {
-            edges {
-              node {
-                strapiId
-                title
-                slug
-                isMenuItem
-                page_list_location {
-                  name
-                }
-              }
-            }
-          }
           
           allFile (filter:{
             relativeDirectory: {
@@ -46,10 +33,6 @@ const TrinityPage = () => {
         }
       `}
       render={data => {
-        const links = data.allStrapiPage.edges.filter(page => 
-          page.node.page_list_location.name === "trinity"
-        )
-
         const regexTest = /^trinity[/](.*)[/](.*)[/](.*)/
 
         /* Extract data from file directory */
@@ -92,16 +75,7 @@ const TrinityPage = () => {
             <ParticleBackground />
             <div className="full-center-flex">
                 <h1 style={{pointerEvents:  "all", fontSize: "3rem"}}>
-    
-                {/* Top Links to Sections */}
-                {links.map(page => 
-                  <div style={{pointerEvents: "all", margin: "2rem"}}>
-                  <Link to={`/${page.node.slug}`} className="trinity-main-link">
-                    {page.node.title}
-                  </Link>
-                  </div>
-                )}
-
+                  TCD Theoretical Physics
                 </h1>
             </div>
             <TrinityFiles semestersObj={semesters} />

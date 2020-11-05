@@ -21,6 +21,9 @@ const IndexPage = () => (
           Nicky Pochinkov.
         </Typist>
         <AnchorLink to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
+        <noscript>
+          Nicky Pochinkov
+        </noscript>
       </h1>
     </div>
 

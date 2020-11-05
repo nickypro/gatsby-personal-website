@@ -65,6 +65,11 @@ const IndexPage = () => (
         <div id="projects">
           {/** Main Projects */}
           <div className="full-center-flex light-section">
+            <noscript><style>{`
+            .animated {
+              opacity: 1;
+            }
+            `}</style></noscript>
             <h1> Main Projects </h1>
             <div className="projects-section">
           

@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import ParticleBackground from '../components/particle-background'
+
+import AboutMe from '../components/about-me'
 import ListProjects from '../components/list-projects'
 
 import Typist from 'react-typist'
@@ -25,6 +27,8 @@ const IndexPage = () => (
         </noscript>
       </h1>
     </div>
+
+    <AboutMe />
 
     <ListProjects />
 

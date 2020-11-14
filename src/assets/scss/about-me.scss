@@ -1,0 +1,24 @@
+.row-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.about-me-image {
+  width: 400px;
+  max-width: 100vw;
+}
+
+.about-me-text {
+  width: 500px;
+  max-width: 100vw;
+  padding: 50px;
+
+  font-size: 1.2rem;
+  line-height: 1.7em;
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+}

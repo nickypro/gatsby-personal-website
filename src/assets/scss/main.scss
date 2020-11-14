@@ -72,6 +72,14 @@ img:hover {
   transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1) ;
 }
 
+.center-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .full-center-flex {
   width: 100%;
   min-height: 100vh;
@@ -79,6 +87,11 @@ img:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.center-text-width {
+  width: 100%;
+  max-width: 1000px;
 }
 
 .transparent-button {

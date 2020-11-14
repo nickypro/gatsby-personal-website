@@ -3,6 +3,8 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image';
 import "../assets/scss/about-me.scss"
 
+import ContactDetails from '../components/contact-details'
+
 const AboutMe = () => {
   
   return (
@@ -58,8 +60,12 @@ const AboutMe = () => {
                 }
               </div>
 
-              <div class="about-me-text" dangerouslySetInnerHTML={{__html: aboutMe.html}} />
-              
+              <div class="about-me-text">
+                <div class="main-text" dangerouslySetInnerHTML={{__html: aboutMe.html}} />
+                
+                <ContactDetails />
+              </div>
+
             </div>
           </div>
         </div>

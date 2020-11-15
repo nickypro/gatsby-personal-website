@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import "../assets/scss/contact-details.scss"
 
-const ContactDetails = () => {
+const ContactDetails = (props) => {
   
   return (
   <StaticQuery
@@ -28,7 +28,10 @@ const ContactDetails = () => {
         const contactDetails = data.allMarkdownRemark.edges[0].node
 
         return (
-        <div className="flex-row contact-details" dangerouslySetInnerHTML={{__html: contactDetails.html}} />
+        <div  style={props.style} 
+              className="flex-row contact-details" 
+              dangerouslySetInnerHTML={{__html: contactDetails.html}} 
+          />
         )}
       }
     />

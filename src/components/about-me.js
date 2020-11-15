@@ -40,12 +40,9 @@ const AboutMe = () => {
 
         const aboutMe = data.allMarkdownRemark.edges[0].node
 
-        console.log(aboutMe)
-        console.log(aboutMe)
-
         return (
         <div id="about-me">
-          {/** Main Projects */}
+
           <div className="light-section center-flex">
             <noscript><style>{`
             .animated {
@@ -62,7 +59,6 @@ const AboutMe = () => {
 
               <div class="about-me-text">
                 <div class="main-text" dangerouslySetInnerHTML={{__html: aboutMe.html}} />
-                
                 <ContactDetails />
               </div>
 

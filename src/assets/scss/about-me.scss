@@ -1,8 +1,12 @@
 .row-flex {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 }
 
 .about-me-image {
@@ -12,7 +16,7 @@
 
 .about-me-text {
   width: 500px;
-  max-width: 100vw;
+  max-width: 95vw;
   padding: 50px;
 
   font-size: 1.2rem;

@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import "../assets/scss/about-me.scss"
 
 import ContactDetails from '../components/contact-details'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const AboutMe = () => {
   
@@ -57,10 +58,12 @@ const AboutMe = () => {
                 }
               </div>
 
+              <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
               <div class="about-me-text">
                 <div class="main-text" dangerouslySetInnerHTML={{__html: aboutMe.html}} />
                 <ContactDetails />
               </div>
+              </ScrollAnimation>
 
             </div>
           </div>

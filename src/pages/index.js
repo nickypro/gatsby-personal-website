@@ -32,12 +32,20 @@ const IndexPage = () => (
           made in Ireland.
         </Typist>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <AnchorLink to="/#about-me" className="transparent-button" stripHash>&#8964;</AnchorLink>
         <noscript>
           Nicky Pochinkov
         </noscript>
       </h1>
 =======
+=======
+        <noscript>
+          <span style={{fontSize: "7rem"}}>Eoin Blunnie</span>
+          <br/>
+          Quality music, made in Ireland.
+        </noscript>
+>>>>>>> f87a087 (added noscript text)
         </h1>
       </span>
 <<<<<<< HEAD

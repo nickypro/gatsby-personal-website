@@ -12,12 +12,7 @@ import "react-typist/dist/Typist.css"
 import "../assets/scss/main.scss"
 
 const IndexPage = () => (
-<<<<<<< HEAD
-  <Layout title="Nicky.pro" path="/">
-    
-=======
   <Layout title="Home" path="/">
->>>>>>> fa87a54 (Changed Titles)
     <ParticleBackground />
     <div className="full-center-flex" style={{pointerEvents: "none", zIndex: 1}}>
       <span style={{pointerEvents:  "all", textAlign: "center"}}>
@@ -31,31 +26,14 @@ const IndexPage = () => (
           <Typist.Delay ms={500} />  
           made in Ireland.
         </Typist>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <AnchorLink to="/#about-me" className="transparent-button" stripHash>&#8964;</AnchorLink>
-        <noscript>
-          Nicky Pochinkov
-        </noscript>
-      </h1>
-=======
-=======
         <noscript>
           <span style={{fontSize: "7rem"}}>Eoin Blunnie</span>
           <br/>
           Quality music, made in Ireland.
         </noscript>
->>>>>>> f87a087 (added noscript text)
         </h1>
       </span>
-<<<<<<< HEAD
       <AnchorLink style={{pointerEvents:  "all"}} to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
->>>>>>> 81dfa72 (Changed text to be for Eoin)
-=======
-      <AnchorLink to="/#projects" className="transparent-button" stripHash>
-        <span style={{pointerEvents: "all"}}>&#8964;</span>      
-      </AnchorLink>
->>>>>>> 36629f2 (Fixed down pointer to be clickable)
     </div>
 
     <AboutMe />

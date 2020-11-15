@@ -10,9 +10,6 @@ const pages = [
   },{
     title: "Blog",
     slug: "/blog",
-  },{
-    title: "Designs",
-    slug: "/designs",
   }
 ]
 

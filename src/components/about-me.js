@@ -44,7 +44,7 @@ const AboutMe = () => {
         return (
         <div id="about-me">
 
-          <div className="light-section center-flex">
+          <div className="dark-section center-flex">
             <noscript><style>{`
             .animated {
               opacity: 1;

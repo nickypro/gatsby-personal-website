@@ -4,7 +4,7 @@
 
 .project-card {
   width: 90vw;
-  max-width: 50rem;
+  max-width: 80rem;
   display: flex;
   flex-direction: row;
   border-radius: 1rem;
@@ -55,7 +55,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .project-card {
     width: 90vw;
     flex-direction: column;

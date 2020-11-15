@@ -3,6 +3,7 @@ src/data/posters
 src/data/trinity
 src/data/projects
 src/data/home
+src/data/logo.svg
 
 # Logs
 logs

@@ -40,6 +40,12 @@ module.exports = {
               maxWidth: 300,
             },
           },
+          {
+            resolve: 'gatsby-remark-copy-relative-linked-files',
+            options: {
+              ignoreFileExtensions: ['.md', '.png', '.jpg', '.pdf', '.xcf'],
+            },
+          },
         ],
       },
     },

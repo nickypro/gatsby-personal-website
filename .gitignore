@@ -5,6 +5,7 @@ src/data/projects
 src/data/home
 src/data/logo.svg
 
+src/data/home
 # Logs
 logs
 *.log

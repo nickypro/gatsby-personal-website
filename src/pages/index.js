@@ -32,8 +32,8 @@ const IndexPage = () => (
           Quality music, made in Ireland.
         </noscript>
         </h1>
+        <AnchorLink style={{pointerEvents:  "all"}} to="/#about-me" className="transparent-button" stripHash>&#8964;</AnchorLink>
       </span>
-      <AnchorLink style={{pointerEvents:  "all"}} to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
     </div>
 
     <AboutMe />

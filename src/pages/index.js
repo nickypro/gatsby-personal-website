@@ -21,7 +21,7 @@ const IndexPage = () => (
           <Typist.Delay ms={500} />
           Nicky Pochinkov.
         </Typist>
-        <AnchorLink to="/#projects" className="transparent-button" stripHash>&#8964;</AnchorLink>
+        <AnchorLink to="/#about-me" className="transparent-button" stripHash>&#8964;</AnchorLink>
         <noscript>
           Nicky Pochinkov
         </noscript>

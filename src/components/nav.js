@@ -7,9 +7,6 @@ const pages = [
   {
     title: "Projects",
     slug: "/#projects",
-  },{
-    title: "Blog",
-    slug: "/blog",
   }
 ]
 

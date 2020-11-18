@@ -99,7 +99,15 @@ function File({file}) {
 }
 
 const TrinityFiles = ({semestersObj}) => {
-  const semestersArr = obj2arr(semestersObj, "modules")
+  let semestersArr = obj2arr(semestersObj, "modules")
+  
+  // we want them in the right order
+  const semesterShorthandNames = Object.keys(semesterShorthand)
+  semestersArr = semestersArr.sort((a, b) => {
+    const indexa = semesterShorthandNames.indexOf(a.name)
+    const indexb = semesterShorthandNames.indexOf(b.name)
+    return indexa - indexb
+  })
 
   return (
     <div>

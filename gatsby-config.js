@@ -13,7 +13,12 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-anchor-links",
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    },
     "gatsby-plugin-sharp", 
     "gatsby-transformer-sharp",
     {

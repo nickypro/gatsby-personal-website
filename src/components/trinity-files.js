@@ -47,9 +47,10 @@ function Semester({modulesObj, name}) {
 
 function Module({sectionsObj, name}) {
   const sectionsArr = obj2arr(sectionsObj, "files")
+  const moduleDivId = String(name).replaceAll(" ", "")
   
   return (
-    <div id={name.replaceAll(" ", "") } className="trinity-module">
+    <div id={ moduleDivId } className="trinity-module">
       <h3>{name}</h3>
       <div className="trinity-sections-container">
       {sectionsArr.map( section => 
@@ -128,10 +129,10 @@ const TrinityFiles = ({semestersObj}) => {
                   {/* List all of the modules in that semester */}
                   {modulesArr.map(module => {
                     const text = module.name                 
-                    const textId = String(module.name).replace(" ", "")                 
+                    const moduleDivId = String(module.name).replaceAll(" ", "")                 
                     return ( 
                       <li key={text}>
-                        <AnchorLink to={`/trinity#${ textId }`} stripHash>{text}</AnchorLink>
+                        <AnchorLink to={`/trinity#${ moduleDivId }`} stripHash>{text}</AnchorLink>
                       </li>
                     )}
                   )}

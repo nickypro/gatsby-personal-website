@@ -128,9 +128,10 @@ const TrinityFiles = ({semestersObj}) => {
                   {/* List all of the modules in that semester */}
                   {modulesArr.map(module => {
                     const text = module.name                 
+                    const textId = String(module.name).replace(" ", "")                 
                     return ( 
                       <li key={text}>
-                        <AnchorLink to={`/trinity#${text.replaceAll(" ", "") }`} stripHash>{text}</AnchorLink>
+                        <AnchorLink to={`/trinity#${ textId }`} stripHash>{text}</AnchorLink>
                       </li>
                     )}
                   )}

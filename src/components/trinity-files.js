@@ -1,4 +1,5 @@
 import React from "react"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 function obj2arr(obj, subsetname) {
   return Object.keys(obj)
@@ -48,7 +49,7 @@ function Module({sectionsObj, name}) {
   const sectionsArr = obj2arr(sectionsObj, "files")
   
   return (
-    <div className="trinity-module">
+    <div id={name.replaceAll(" ", "") } className="trinity-module">
       <h3>{name}</h3>
       <div className="trinity-sections-container">
       {sectionsArr.map( section => 
@@ -112,15 +113,40 @@ const TrinityFiles = ({semestersObj}) => {
   return (
     <div>
 
-      {/*
-      <ul className="trinity-modules-list">
-      {modules.map(text => 
-        <li key={text}>{text}</li>
-      )}
-      </ul>
-      */}
+      <div className="full-center-flex light-section">
+        <ul className="trinity-modules-list">
+
+          {/* List all of the Semesters */}
+          {semestersArr.map(semester => {
+            const text = semester.name
+            const modulesArr = obj2arr(semester.modules, "sections")
+            return ( 
+              <li key={text}>
+                <AnchorLink to={`/trinity#${text}`} stripHash>{semesterShorthand[text]}</AnchorLink>
+                <ul>
+
+                  {/* List all of the modules in that semester */}
+                  {modulesArr.map(module => {
+                    const text = module.name                 
+                    return ( 
+                      <li key={text}>
+                        <AnchorLink to={`/trinity#${text.replaceAll(" ", "") }`} stripHash>{text}</AnchorLink>
+                      </li>
+                    )}
+                  )}
+
+                </ul>
+              </li>
+            )}
+          )}
+        
+        </ul>
+      </div>
+      
       {semestersArr.map( (semester, index) =>         
-        <div className={"full-center-flex " + ((index%2 === 0)?"light-section":"dark-section")}>
+        <div id={semester.name}
+            className={"full-center-flex " + ((index%2 === 1)?"light-section":"dark-section")}
+            >
           <Semester modulesObj={semester.modules} name={semester.name}/>
         </div>
       )}
